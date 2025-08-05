@@ -91,9 +91,11 @@ class ThemeInit {
 
 		$css_path = self::$isDev ? '/css/dist/cyn-theme-style.css' : '/css/dist/cyn-theme-style.min.css';
 		$js_path = self::$isDev ? '/js/dist/cyn-theme-script.bundle.js' : '/js/dist/cyn-theme-script.bundle.min.js';
+		$js_css_path = self::$isDev ? '/js/dist/cyn-theme-script.bundle.css' : '/js/dist/cyn-theme-script.bundle.min.css';
 
 		//Enqueue styles
 		wp_enqueue_style( THEME_SLUG, THEME_ASSETS_URI . $css_path, [], self::$version );
+		wp_enqueue_style(THEME_SLUG . '-js', THEME_ASSETS_URI . $js_css_path, [], self::$version);
 
 		//Enqueue scripts
 		wp_enqueue_script( THEME_SLUG, THEME_ASSETS_URI . $js_path, [ 'jquery' ], self::$version, true );

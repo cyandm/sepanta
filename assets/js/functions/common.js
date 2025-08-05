@@ -3,7 +3,7 @@
  * @constant {string}
  * @default
  */
-const ENVIRONMENT = 'development'; // 'development', 'production'
+const ENVIRONMENT = "development"; // 'development', 'production'
 
 /**
  * Checks if the environment is 'development'.
@@ -21,7 +21,7 @@ const ENVIRONMENT = 'development'; // 'development', 'production'
  * }
  */
 export function isDev() {
-	return ENVIRONMENT === 'development';
+  return ENVIRONMENT === "development";
 }
 
 /**
@@ -41,7 +41,7 @@ export function isDev() {
  * // Only logs if the environment is 'development'.
  */
 export function devLog(...variable) {
-	if (isDev() === false) return;
+  if (isDev() === false) return;
 
-	console.log(...variable);
+  console.log(...variable);
 }

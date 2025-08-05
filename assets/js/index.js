@@ -8,9 +8,13 @@ import { SubMenuMobile } from "./functions/subMenuMobile";
 import { AddIcons } from "./functions/subMenu";
 import { register } from "swiper/element/bundle";
 import videoCover from "./modules/videoCover";
+import { ThemePlyr } from "./modules/plyr";
+import { Popups } from "./functions/popups";
 
 Modals();
 SubMenuMobile();
 AddIcons();
 register();
 videoCover();
+ThemePlyr();
+Popups();

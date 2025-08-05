@@ -40,6 +40,7 @@ class Register
 		self::makePostType('project', 'پروژه', 'پروژه ها', 'dashicons-bank', ['title', 'thumbnail', 'editor']);
 		self::makePostType('service', 'خدمت', 'خدمات', 'dashicons-hammer', ['title', 'thumbnail', 'editor']);
 		self::makePostType('engineer', 'مهندس', 'مهندسین', 'dashicons-admin-users', ['title', 'thumbnail', 'editor']);
+		self::makePostType('testimonial', 'نظر', 'نظرات', 'dashicons-admin-comments', ['title', 'thumbnail', 'editor']);
 	}
 
 	public static function registerTaxonomy()

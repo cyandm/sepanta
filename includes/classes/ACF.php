@@ -37,6 +37,7 @@ class ACF
 		self::forPosts();
 		self::forProjects();
 		self::forEngineers();
+		self::forTestimonials();
 
 		//Taxonomies
 
@@ -120,8 +121,8 @@ class ACF
 		$acfGroup = new AcfGroup();
 
 		//add fields
-		$acfGroup->basicFields->addText('engineer_position', 'جایگاه', ['width' => '100%']);
-		$acfGroup->basicFields->addText('engineer_video', 'ویدیو', ['width' => '100%']);
+		$acfGroup->basicFields->addText('engineer_position', 'سمت', ['width' => '100%']);
+		$acfGroup->contentFields->addFile('engineer_video', 'ویدیو', ['width' => '100%']);
 
 		//location
 		$acfGroup->setLocation('post_type', '==', 'engineer');
@@ -130,6 +131,23 @@ class ACF
 		$acfGroup->register('Engineer');
 	}
 
+	private static function forTestimonials()
+	{
+
+		//define helper
+		$acfGroup = new AcfGroup();
+
+		//add fields
+		$acfGroup->basicFields->addText('testimonial_name', 'اسم نویسنده', ['width' => '33%']);
+		$acfGroup->basicFields->addText('testimonial_date', 'تاریخ', ['width' => '33%']);
+		$acfGroup->basicFields->addText('testimonial_score', 'امتیاز (1 تا 5)', ['width' => '33%']);
+
+		//location
+		$acfGroup->setLocation('post_type', '==', 'testimonial');
+
+		// register group
+		$acfGroup->register('testimonial');
+	}
 
 
 	//Page Templates
@@ -215,6 +233,14 @@ class ACF
 		$acfGroup->layoutFields->addTab('engineers', 'مهندسین');
 		$acfGroup->basicFields->addText('engineers_title', 'عنوان مهندسین', ['width' => '100%']);
 		$acfGroup->relationshipFields->addLink('engineers_link', 'متن و لینک دکمه', ['width' => '100%']);
+
+		$acfGroup->layoutFields->addTab('vision', 'چشم انداز ما');
+		$acfGroup->basicFields->addText('vision_title', 'عنوان', ['width' => '50%']);
+		$acfGroup->basicFields->addTextarea('vision_desc', 'توضیحات', ['width' => '50%']);
+
+		$acfGroup->layoutFields->addTab('testimonials', 'نظرات');
+		$acfGroup->basicFields->addText('testimonials_title', 'عنوان نظرات', ['width' => '50%']);
+		$acfGroup->relationshipFields->addLink('testimonials_link', 'لینک دکمه', ['width' => '50%']);
 
 		//location
 		$acfGroup->setLocation('page_template', '==', 'templates/home.php');

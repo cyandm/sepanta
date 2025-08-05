@@ -19,7 +19,7 @@ $services = new WP_Query($services_args);
     <div class="container flex flex-col gap-4">
 
         <div class="flex justify-between items-center">
-            <p class="text-5xl font-semibold text-cynBlack"><?php echo $services_title; ?></p>
+            <p class="text-5xl font-semibold text-cynBlack max-md:text-4xl"><?php echo $services_title; ?></p>
 
             <div class="flex gap-2 max-md:hidden">
 

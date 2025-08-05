@@ -10,10 +10,12 @@ $telegram_link = get_option('telegram_link');
 $instagram_link = get_option('instagram_link');
 $whatsapp_link = get_option('whatsapp_link');
 $logo = get_option('logo');
-
 ?>
 
-<?php Templates::getPart('backdrop'); ?>
+<?php
+Templates::getPopup('introduction');
+Templates::getPart('backdrop');
+?>
 
 <section class="bg-cynLightGrey rounded-4xl p-8 max-md:py-4 max-md:px-3 flex justify-between max-md:flex-col-reverse max-md:gap-7">
 

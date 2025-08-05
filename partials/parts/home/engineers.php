@@ -25,14 +25,14 @@ $engineers = new WP_Query($engineers_args);
 <section class="container flex flex-col gap-4 my-16 max-md:my-11">
 
     <div class="flex justify-between items-center">
-        <p class="text-5xl font-semibold"><?php echo $engineers_title; ?></p>
+        <p class="text-5xl font-semibold max-md:text-4xl text-cynBlack"><?php echo $engineers_title; ?></p>
         <a href="<?php echo $engineers_link['url']; ?>" class="btn-primary py-3 px-6 text-base font-normal max-md:hidden"><?php echo $engineers_link['title']; ?></a>
     </div>
 
-    <div class="flex gap-3 max-md:flex-col max-md:gap-3">
+    <div class="flex gap-3 max-md:flex-col max-lg:flex-wrap">
 
         <?php while ($engineers->have_posts()) : $engineers->the_post(); ?>
-            <?php Templates::getCard('engineer', ['engineer_id' => get_the_ID()]) ?>
+            <?php Templates::getCard('engineer') ?>
         <?php endwhile; ?>
 
     </div>
