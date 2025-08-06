@@ -41,6 +41,7 @@ class Register
 		self::makePostType('service', 'خدمت', 'خدمات', 'dashicons-hammer', ['title', 'thumbnail', 'editor']);
 		self::makePostType('engineer', 'مهندس', 'مهندسین', 'dashicons-admin-users', ['title', 'thumbnail', 'editor']);
 		self::makePostType('testimonial', 'نظر', 'نظرات', 'dashicons-admin-comments', ['title', 'thumbnail', 'editor']);
+		self::makePostType('faq', 'سوال', 'سوالات', 'dashicons-list-view', ['title', 'editor']);
 	}
 
 	public static function registerTaxonomy()
@@ -48,6 +49,7 @@ class Register
 		self::makeTaxonomy('project-cat', 'دسته بندی', 'دسته بندی ها', ['project'], true);
 		self::makeTaxonomy('service-cat', 'دسته بندی', 'دسته بندی ها', ['service'], true);
 		self::makeTaxonomy('engineer-cat', 'دسته بندی', 'دسته بندی ها', ['engineer'], true);
+		self::makeTaxonomy('faq-cat', 'دسته بندی', 'دسته بندی ها', ['faq'], true);
 	}
 
 	/**

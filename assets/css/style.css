@@ -303,3 +303,20 @@
 .plyr {
   border-radius: 2rem;
 }
+
+.testimonial-cart:after {
+  content: "";
+  background: #e6e7ed;
+  position: absolute;
+}
+
+.testimonial-cart:after:nth-last-child {
+  height: 0px;
+  width: 0px;
+}
+
+.testimonial-cart::before {
+  content: "";
+  background: #e6e7ed;
+  position: absolute;
+}

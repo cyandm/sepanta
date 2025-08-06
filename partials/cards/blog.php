@@ -1,32 +1,58 @@
 <?php
 
-use Cyan\Theme\Helpers\Icon; ?>
+use Cyan\Theme\Helpers\Icon;
+?>
 
 
-<section class="container flex gap-3 max-lg:flex-col">
+<a href="<?php the_permalink(); ?>" class="border border-cynLightBlue hover:border-cynBlue transition-all duration-300 block w-[calc(33%-5px)] rounded-3xl max-lg:flex max-lg:w-full">
 
-      <div class="w-[25%] max-lg:w-full">
+      <div class="relative max-sm:w-2/5">
+            <?php if (has_post_thumbnail()) : ?>
+                  <?php the_post_thumbnail('full', ['class' => 'w-full rounded-3xl object-cover object-center max-md:w-full max-sm:h-45']); ?>
+            <?php endif; ?>
 
-            <div class="shadow-[0px_0px_10px_0px_rgba(0,_0,_0,_0.14)] p-3.5 rounded-3xl ">
+            <div class="absolute top-3 right-3 flex gap-2">
 
-                  <form id="search-form">
-                        <div class="relative">
-                              <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                                    <div class="w-6 text-cynBlue stroke-[2]">
-                                          <?php icon::print('Search,-Loupe'); ?>
-                                    </div>
-                              </div>
-                              <input type="text"
-                                    id="email-address-icon"
-                                    name="s"
-                                    value="<?php the_search_query() ?>"
-                                    class="bg-white rounded-4xl text-[#07162C] font-semibold border border-[#07162C] pt-3 pr-11 focus-visible:border-[#002D74] focus-visible:outline-[#002D74] focus:border-[#002D74] block p-2.5 w-full"
-                                    placeholder="جستجو کن">
+                  <div class="px-5 py-1 rounded-2xl bg-white/20 backdrop-blur-md max-lg:hidden text-white flex flex-col items-center gap-1">
+
+                        <div class="size-5 text-white">
+                              <?php icon::print('message-text-2'); ?>
                         </div>
-                  </form>
 
+                        <span class="text-xs">
+                              <?php
+                              $count = get_comments_number();
+                              if ($count > 0) {
+                                    echo $count;
+                              } else {
+                                    echo '0';
+                              }
+                              ?>
+                        </span>
+                  </div>
 
-                  
+                  <div class="px-2 py-1 rounded-2xl bg-white/20 backdrop-blur-md max-lg:hidden text-white flex flex-col items-center gap-1">
+
+                        <div class="size-5">
+                              <?php icon::print('calendar-schedule-1-1'); ?>
+                        </div>
+
+                        <span class="text-xs font-normal flex whitespace-nowrap">
+                              <?php echo get_the_date(); ?>
+                        </span>
+                  </div>
+
             </div>
 
-</section>
+      </div>
+
+      <div class="p-3 pb-5 [&_*]:leading-7 [&_p]:gap-1 max-md:w-3/5">
+            <p class="text-base font-semibold text-cynBlack">
+                  <?php the_title(); ?>
+            </p>
+
+            <div class="text-xs font-medium text-cynLighter line-clamp-2">
+                  <?php the_excerpt(); ?>
+            </div>
+      </div>
+</a>

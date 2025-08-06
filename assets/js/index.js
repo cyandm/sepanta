@@ -10,6 +10,8 @@ import { register } from "swiper/element/bundle";
 import videoCover from "./modules/videoCover";
 import { ThemePlyr } from "./modules/plyr";
 import { Popups } from "./functions/popups";
+import { FaqTabs, FaqCard } from "./functions/faq";
+import { SelectBox } from "./functions/selectBox";
 
 Modals();
 SubMenuMobile();
@@ -18,3 +20,6 @@ register();
 videoCover();
 ThemePlyr();
 Popups();
+FaqTabs();
+FaqCard();
+SelectBox();

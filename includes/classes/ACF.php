@@ -34,7 +34,6 @@ class ACF
 	public static function registerAllACF()
 	{
 		//PostTypes
-		self::forPosts();
 		self::forProjects();
 		self::forEngineers();
 		self::forTestimonials();
@@ -48,29 +47,6 @@ class ACF
 
 		//Menu Items
 
-	}
-
-
-	//PostTypes
-	private static function forPosts()
-	{
-
-		//define helper
-		$acfGroup = new AcfGroup();
-
-		//add fields
-		$acfGroup->basicFields->addText('title', 'Title', [
-			'default_value' => 'Default Title',
-			'aria-label' => 'Title',
-			'width' => '50%',
-			'required' => true
-		]);
-
-		//location
-		$acfGroup->setLocation('post_type', '==', Validators::PostType('post'));
-
-		// register group
-		$acfGroup->register('Post');
 	}
 
 	private static function forProjects()
@@ -241,6 +217,10 @@ class ACF
 		$acfGroup->layoutFields->addTab('testimonials', 'نظرات');
 		$acfGroup->basicFields->addText('testimonials_title', 'عنوان نظرات', ['width' => '50%']);
 		$acfGroup->relationshipFields->addLink('testimonials_link', 'لینک دکمه', ['width' => '50%']);
+
+		$acfGroup->layoutFields->addTab('articles', 'مقالات');
+		$acfGroup->basicFields->addText('articles_title', 'عنوان مقالات', ['width' => '50%']);
+		$acfGroup->relationshipFields->addLink('articles_link', 'متن و لینک دکمه', ['width' => '50%']);
 
 		//location
 		$acfGroup->setLocation('page_template', '==', 'templates/home.php');

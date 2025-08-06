@@ -12495,6 +12495,102 @@
     });
   }
 
+  // assets/js/functions/faq.js
+  function FaqTabs() {
+    const handlers = document.querySelectorAll(".faq-handler");
+    const panels = document.querySelectorAll(".faq-panel");
+    if (!panels || !handlers) return;
+    function activateTab(element) {
+      if (!element) return;
+      element.classList.replace("bg-[#9C9FB9]", "bg-cynBlue");
+    }
+    function deActivateTab(element) {
+      if (!element) return;
+      element.classList.replace("bg-cynBlue", "bg-[#9C9FB9]");
+    }
+    function activatePanel(element) {
+      if (!element) return;
+      element.classList.replace("grid-rows-[0fr]", "grid-rows-[1fr]");
+    }
+    function deActivatePanel(element) {
+      if (!element) return;
+      element.classList.replace("grid-rows-[1fr]", "grid-rows-[0fr]");
+    }
+    activateTab(handlers[0]);
+    activatePanel(panels[0]);
+    handlers.forEach((handler) => {
+      handler.addEventListener("click", () => {
+        handlers.forEach((innerHandler) => deActivateTab(innerHandler));
+        activateTab(handler);
+        panels.forEach((panel) => {
+          const isRelatedPanel = panel.getAttribute("controlled-by") === handler.id;
+          if (isRelatedPanel) {
+            activatePanel(panel);
+          } else {
+            deActivatePanel(panel);
+          }
+        });
+      });
+    });
+  }
+  function FaqCard() {
+    const faqCards = document.querySelectorAll(".faq-card");
+    if (!faqCards) return;
+    function activateFaq(faq, expert) {
+      var _a;
+      expert.classList.replace("grid-rows-[0fr]", "grid-rows-[1fr]");
+      (_a = faq.querySelector("svg")) == null ? void 0 : _a.classList.add("rotate-45");
+    }
+    function deActivateFaq(faq, expert) {
+      var _a;
+      expert.classList.replace("grid-rows-[1fr]", "grid-rows-[0fr]");
+      (_a = faq.querySelector("svg")) == null ? void 0 : _a.classList.remove("rotate-45");
+    }
+    faqCards.forEach((faq) => {
+      const faqToggle = faq.querySelector(".faq-toggle");
+      const expert = faq.querySelector(".faq-expert");
+      if (!expert) return;
+      faqToggle == null ? void 0 : faqToggle.addEventListener("click", () => {
+        const faqIsActive = expert.classList.contains("grid-rows-[1fr]");
+        if (faqIsActive) {
+          deActivateFaq(faq, expert);
+        } else {
+          activateFaq(faq, expert);
+        }
+      });
+    });
+  }
+
+  // assets/js/functions/selectBox.js
+  function SelectBox() {
+    const selectBoxGroup = document.querySelectorAll(".select-box");
+    if (!selectBoxGroup) return;
+    function toggleActivatePanel(panel, icon, selector) {
+      panel.classList.toggle("opacity-0");
+      panel.classList.toggle("-translate-y-4");
+      panel.classList.toggle("pointer-events-none");
+      icon.classList.toggle("rotate-180");
+      icon.classList.toggle("text-accent-40");
+      selector.classList.contains("border-accent-40") ? selector.classList.replace("border-accent-40", "border-primary-70") : selector.classList.replace("border-primary-70", "border-accent-40");
+    }
+    selectBoxGroup.forEach((selectBox) => {
+      const selector = selectBox.querySelector(".select-box-selector");
+      const panel = selectBox.querySelector(".select-box-panel");
+      const value = selectBox.querySelector(".select-box-value");
+      const options = selectBox.querySelectorAll(".select-box-option");
+      const icon = selectBox.querySelector("svg");
+      selector.addEventListener("click", () => {
+        toggleActivatePanel(panel, icon, selector);
+      });
+      options.forEach((option) => {
+        option.addEventListener("click", () => {
+          value.innerText = option.innerText;
+          toggleActivatePanel(panel, icon, selector);
+        });
+      });
+    });
+  }
+
   // assets/js/index.js
   Modals();
   SubMenuMobile();
@@ -12503,4 +12599,7 @@
   videoCover();
   ThemePlyr();
   Popups();
+  FaqTabs();
+  FaqCard();
+  SelectBox();
 })();

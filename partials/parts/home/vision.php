@@ -11,7 +11,7 @@ $vision_desc = get_field('vision_desc', $page_id);
 
         <div class="flex flex-col justify-center gap-3 text-cynBlack w-1/2 max-md:w-full">
 
-            <p class="text-5xl max-md:text-4xl font-semibold"><?php echo $vision_title ?></p>
+            <p class="text-5xl max-md:text-4xl font-semibold text-cynBlue"><?php echo $vision_title ?></p>
 
             <p class="text-xl font-medium leading-9"><?php echo $vision_desc ?></p>
 

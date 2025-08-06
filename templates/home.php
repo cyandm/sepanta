@@ -17,6 +17,8 @@ Templates::getPart('home/video');
 Templates::getPart('home/engineers');
 Templates::getPart('home/vision');
 Templates::getPart('home/testimonials');
+Templates::getPart('home/faq');
+Templates::getPart('home/article');
 ?>
 
 
