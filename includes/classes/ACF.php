@@ -39,6 +39,7 @@ class ACF
 		self::forTestimonials();
 
 		//Taxonomies
+		self::forCategory();
 
 		//Page Templates
 		self::forContactUs();
@@ -48,6 +49,7 @@ class ACF
 		//Menu Items
 
 	}
+
 
 	private static function forProjects()
 	{
@@ -90,6 +92,7 @@ class ACF
 		$acfGroup->register('اطلاعات');
 	}
 
+
 	private static function forEngineers()
 	{
 
@@ -107,6 +110,7 @@ class ACF
 		$acfGroup->register('Engineer');
 	}
 
+
 	private static function forTestimonials()
 	{
 
@@ -123,6 +127,23 @@ class ACF
 
 		// register group
 		$acfGroup->register('testimonial');
+	}
+
+
+	//Taxonomies
+	private static function forCategory()
+	{
+		//define helper
+		$acfGroup = new AcfGroup();
+
+		//add fields
+		$acfGroup->contentFields->addImage('category_image', 'عکس دسته بندی');
+
+		//location
+		$acfGroup->setLocation('taxonomy', '==', 'category');
+
+		// register group
+		$acfGroup->register('thumnail');
 	}
 
 
@@ -146,6 +167,7 @@ class ACF
 		// register group
 		$acfGroup->register('Contact-Us');
 	}
+
 
 	private static function forAbout()
 	{
@@ -175,6 +197,7 @@ class ACF
 		// register group
 		$acfGroup->register('About');
 	}
+
 
 	private static function forHome()
 	{

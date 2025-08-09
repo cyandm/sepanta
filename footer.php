@@ -13,7 +13,7 @@ $render_template = $args['render_template'] ?? true;
 ?>
 
 <?php if ($render_template) : ?>
-	<footer class="container my-14 max-md:my-8">
+	<footer class="container mb-14 mt-32">
 		<?php Templates::getPart('footer'); ?>
 	</footer>
 <?php endif; ?>

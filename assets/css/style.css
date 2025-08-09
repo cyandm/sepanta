@@ -320,3 +320,28 @@
   background: #e6e7ed;
   position: absolute;
 }
+
+/* Category hover animation */
+.category-link {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.single-content p {
+  text-align: justify;
+}
+.single-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.single-content h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.single-content h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
