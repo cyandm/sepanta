@@ -17,7 +17,7 @@ use Cyan\Theme\Helpers\Templates;
                   id="email-address-icon"
                   name="s"
                   value="<?php the_search_query() ?>"
-                  class="text-[#7B7B7B] ps-10 w-4/5 bg-cynLightGrey rounded-4xl py-3 px-3 border-none outline-none focus:outline-none focus:border-none hover:border-none max-md:hidden"
+                  class="text-[#7B7B7B] ps-10 w-4/5 bg-cynLightGrey rounded-4xl py-3 px-3 border-cynBlue outline-cynBlue focus:outline-cynBlue focus:border-cynBlue hover:border-cynBlue hover:text-black max-md:hidden"
                   placeholder="جستجو کن">
       </div>
 
@@ -36,5 +36,5 @@ use Cyan\Theme\Helpers\Templates;
       <div class="w-1/5 flex justify-end items-center">
             <?php the_custom_logo() ?>
       </div>
-      
+
 </section>

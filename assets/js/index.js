@@ -3,23 +3,10 @@
  * you must add any functions for every javascript file to the import statement below.
  */
 
-import { Modals } from "./functions/modals";
-import { SubMenuMobile } from "./functions/subMenuMobile";
-import { AddIcons } from "./functions/subMenu";
-import { register } from "swiper/element/bundle";
-import videoCover from "./modules/videoCover";
-import { ThemePlyr } from "./modules/plyr";
-import { Popups } from "./functions/popups";
-import { FaqTabs, FaqCard } from "./functions/faq";
-import { SelectBox } from "./functions/selectBox";
+import { Modals } from './functions/modals';
+import { subMenuMobile } from './functions/subMenuMobile';
+import { addIcons } from './functions/submenu';
 
 Modals();
-SubMenuMobile();
-AddIcons();
-register();
-videoCover();
-ThemePlyr();
-Popups();
-FaqTabs();
-FaqCard();
-SelectBox();
+subMenuMobile();
+addIcons();

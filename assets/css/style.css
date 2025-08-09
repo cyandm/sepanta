@@ -1,149 +1,135 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /*Peyda Font Family Persian Number Version*/
 @layer base {
-  @font-face {
-    font-family: "PeydaFaNumber";
-    font-style: normal;
-    font-weight: 100;
-    font-display: swap;
-    src: url("../../font/peyda/woff2/PeydaWebFaNum-Thin.woff2") format("woff2"),
-      url("../../font/peyda/TTF/PeydaFaNum-Thin.ttf") format("TrueType"),
-      url("../../font/peyda/woff/PeydaWebFaNum-Thin.woff") format("woff");
-  }
+	@font-face {
+		font-family: 'PeydaFaNumber';
+		font-style: normal;
+		font-weight: 100;
+		font-display: swap;
+		src: url('../../font/peyda/woff2/PeydaWebFaNum-Thin.woff2') format('woff2'),
+			url('../../font/peyda/TTF/PeydaFaNum-Thin.ttf') format('TrueType'),
+			url('../../font/peyda/woff/PeydaWebFaNum-Thin.woff') format('woff');
+	}
 
-  @font-face {
-    font-family: "PeydaFaNumber";
-    font-style: normal;
-    font-weight: 200;
-    font-display: swap;
-    src: url("../../font/peyda/woff2/PeydaWebFaNum-ExtraLight.woff2")
-        format("woff2"),
-      url("../../font/peyda/TTF/PeydaFaNum-ExtraLight.ttf") format("TrueType"),
-      url("../../font/peyda/woff/PeydaWebFaNum-ExtraLight.woff") format("woff");
-  }
+	@font-face {
+		font-family: 'PeydaFaNumber';
+		font-style: normal;
+		font-weight: 200;
+		font-display: swap;
+		src: url('../../font/peyda/woff2/PeydaWebFaNum-ExtraLight.woff2')
+				format('woff2'),
+			url('../../font/peyda/TTF/PeydaFaNum-ExtraLight.ttf') format('TrueType'),
+			url('../../font/peyda/woff/PeydaWebFaNum-ExtraLight.woff') format('woff');
+	}
 
-  @font-face {
-    font-family: "PeydaFaNumber";
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-    src: url("../../font/peyda/woff2/PeydaWebFaNum-Light.woff2") format("woff2"),
-      url("../../font/peyda/TTF/PeydaFaNum-Light.ttf") format("TrueType"),
-      url("../../font/peyda/woff/PeydaWebFaNum-Light.woff") format("woff");
-  }
+	@font-face {
+		font-family: 'PeydaFaNumber';
+		font-style: normal;
+		font-weight: 300;
+		font-display: swap;
+		src: url('../../font/peyda/woff2/PeydaWebFaNum-Light.woff2') format('woff2'),
+			url('../../font/peyda/TTF/PeydaFaNum-Light.ttf') format('TrueType'),
+			url('../../font/peyda/woff/PeydaWebFaNum-Light.woff') format('woff');
+	}
 
-  @font-face {
-    font-family: "PeydaFaNumber";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("../../font/peyda/woff2/PeydaWebFaNum-Regular.woff2")
-        format("woff2"),
-      url("../../font/peyda/TTF/PeydaFaNum-Regular.ttf") format("TrueType"),
-      url("../../font/peyda/woff/PeydaWebFaNum-Regular.woff") format("woff");
-  }
+	@font-face {
+		font-family: 'PeydaFaNumber';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url('../../font/peyda/woff2/PeydaWebFaNum-Regular.woff2')
+				format('woff2'),
+			url('../../font/peyda/TTF/PeydaFaNum-Regular.ttf') format('TrueType'),
+			url('../../font/peyda/woff/PeydaWebFaNum-Regular.woff') format('woff');
+	}
 
-  @font-face {
-    font-family: "PeydaFaNumber";
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url("../../font/peyda/woff2/PeydaWebFaNum-Medium.woff2")
-        format("woff2"),
-      url("../../font/peyda/TTF/PeydaFaNum-Medium.ttf") format("TrueType"),
-      url("../../font/peyda/woff/PeydaWebFaNum-Medium.woff") format("woff");
-  }
+	@font-face {
+		font-family: 'PeydaFaNumber';
+		font-style: normal;
+		font-weight: 500;
+		font-display: swap;
+		src: url('../../font/peyda/woff2/PeydaWebFaNum-Medium.woff2')
+				format('woff2'),
+			url('../../font/peyda/TTF/PeydaFaNum-Medium.ttf') format('TrueType'),
+			url('../../font/peyda/woff/PeydaWebFaNum-Medium.woff') format('woff');
+	}
 
-  @font-face {
-    font-family: "PeydaFaNumber";
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url("../../font/peyda/woff2/PeydaWebFaNum-SemiBold.woff2")
-        format("woff2"),
-      url("../../font/peyda/TTF/PeydaFaNum-SemiBold.ttf") format("TrueType"),
-      url("../../font/peyda/woff/PeydaWebFaNum-SemiBold.woff") format("woff");
-  }
+	@font-face {
+		font-family: 'PeydaFaNumber';
+		font-style: normal;
+		font-weight: 600;
+		font-display: swap;
+		src: url('../../font/peyda/woff2/PeydaWebFaNum-SemiBold.woff2')
+				format('woff2'),
+			url('../../font/peyda/TTF/PeydaFaNum-SemiBold.ttf') format('TrueType'),
+			url('../../font/peyda/woff/PeydaWebFaNum-SemiBold.woff') format('woff');
+	}
 
-  @font-face {
-    font-family: "PeydaFaNumber";
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url("../../font/peyda/woff2/PeydaWebFaNum-Bold.woff2") format("woff2"),
-      url("../../font/peyda/TTF/PeydaFaNum-Bold.ttf") format("TrueType"),
-      url("../../font/peyda/woff/PeydaWebFaNum-Bold.woff") format("woff");
-  }
+	@font-face {
+		font-family: 'PeydaFaNumber';
+		font-style: normal;
+		font-weight: 700;
+		font-display: swap;
+		src: url('../../font/peyda/woff2/PeydaWebFaNum-Bold.woff2') format('woff2'),
+			url('../../font/peyda/TTF/PeydaFaNum-Bold.ttf') format('TrueType'),
+			url('../../font/peyda/woff/PeydaWebFaNum-Bold.woff') format('woff');
+	}
 
-  @font-face {
-    font-family: "PeydaFaNumber";
-    font-style: normal;
-    font-weight: 800;
-    font-display: swap;
-    src: url("../../font/peyda/woff2/PeydaWebFaNum-ExtraBold.woff2")
-        format("woff2"),
-      url("../../font/peyda/TTF/PeydaFaNum-ExtraBold.ttf") format("TrueType"),
-      url("../../font/peyda/woff/PeydaWebFaNum-ExtraBold.woff") format("woff");
-  }
+	@font-face {
+		font-family: 'PeydaFaNumber';
+		font-style: normal;
+		font-weight: 800;
+		font-display: swap;
+		src: url('../../font/peyda/woff2/PeydaWebFaNum-ExtraBold.woff2')
+				format('woff2'),
+			url('../../font/peyda/TTF/PeydaFaNum-ExtraBold.ttf') format('TrueType'),
+			url('../../font/peyda/woff/PeydaWebFaNum-ExtraBold.woff') format('woff');
+	}
 
-  @font-face {
-    font-family: "PeydaFaNumber";
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
-    src: url("../../font/peyda/woff2/PeydaWebFaNum-Black.woff2") format("woff2"),
-      url("../../font/peyda/TTF/PeydaFaNum-Black.ttf") format("TrueType"),
-      url("../../font/peyda/woff/PeydaWebFaNum-Black.woff") format("woff");
-  }
+	@font-face {
+		font-family: 'PeydaFaNumber';
+		font-style: normal;
+		font-weight: 900;
+		font-display: swap;
+		src: url('../../font/peyda/woff2/PeydaWebFaNum-Black.woff2') format('woff2'),
+			url('../../font/peyda/TTF/PeydaFaNum-Black.ttf') format('TrueType'),
+			url('../../font/peyda/woff/PeydaWebFaNum-Black.woff') format('woff');
+	}
 }
 
 @layer base {
-  body {
-    font-family: "PeydaFaNumber", sans-serif;
-    font-feature-settings: "ss01" 1;
-    font-variant-ligatures: discretionary-ligatures;
-  }
+	body {
+		font-family: 'PeydaFaNumber', sans-serif;
+		font-feature-settings: 'ss01' 1;
+		font-variant-ligatures: discretionary-ligatures;
+	}
 
-  svg {
-    width: inherit;
-    height: inherit;
-  }
+	svg {
+		width: inherit;
+		height: inherit;
+	}
 }
 
 .container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem
 }
 
-@theme {
-  --color-cynWhite: #ffffff;
-  --color-cynBlue: #08104f;
-  --color-cynLightBlue: #d2d4e5;
-  --color-cynBlack: #303030;
+@theme{
+ --color-cynWhite: #ffffff;
+ --color-cynBlue: #08104F;
+ --color-cynLightBlue: #D2D4E5;
+ --color-cynBlack: #303030;
   --color-cynLighter: #808080;
   --color-cynLightGrey: #f8f8fa;
   --color-cynBorder: #e7e7e7;
 }
 
-.btn-primary {
-  @apply bg-cynLightBlue text-cynBlack rounded-full transition-all duration-300;
-}
 
-.btn-primary:hover {
-  @apply bg-cynBlue text-cynWhite;
-}
-
-.btn-secondary {
-  @apply bg-cynBlue text-cynWhite rounded-full transition-all duration-300;
-}
-
-.btn-secondary:hover {
-  @apply bg-cynLightBlue text-cynBlack;
-}
 
 /*-------mobile-menu---------*/
 #mobile-menu li {
@@ -163,6 +149,7 @@
   position: static; /* یا absolute برای حالت‌های خاص */
   width: 100%;
 }
+
 
 #mobile-menu .sub-menu-toggle {
   display: none;
@@ -221,8 +208,8 @@
   @apply text-xs font-normal border border-[#EBEBEB] rounded-xl;
 }
 
-#main-menu li ul li:hover {
-  @apply bg-cynBlue text-white;
+#main-menu li ul li:hover{
+@apply bg-cynBlue text-white;
 }
 
 #main-menu li a {
@@ -249,11 +236,11 @@
   display: block;
 }
 
-#main-menu li.menu-item-has-children > a {
-  @apply flex justify-center items-center;
+#main-menu li.menu-item-has-children > a{
+  @apply flex justify-center items-center
 }
 
-#main-menu li.menu-item-has-children a:hover > div {
+#main-menu li.menu-item-has-children a:hover > div{
   @apply rotate-180 transition-all duration-150;
 }
 
@@ -261,35 +248,35 @@
   @apply rotate-180 transition-all duration-150;
 }
 
-#main-menu li {
-  @apply transition-all duration-300 relative;
+#main-menu li{
+@apply transition-all duration-300 relative;
 }
 
-#main-menu > li:hover::before {
-  content: "";
-  display: block;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: #08104f;
-  color: #fff;
-  position: absolute;
-  top: 53%;
-  right: -8px;
-  transform: translateY(-50%);
+#main-menu > li:hover::before{
+content: "";
+display: block;
+width: 4px;
+height: 4px;
+border-radius: 50%;
+background-color: #08104F;
+color: #fff;
+position: absolute;
+top: 53%;
+right: -8px;
+transform: translateY(-50%);
 }
 
 #main-menu > li::before {
-  content: "";
-  display: block;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: #08104f;
-  color: #fff;
-  position: absolute;
-  top: 53%;
-  right: -8px;
+content: "";
+display: block;
+width: 4px;
+height: 4px;
+border-radius: 50%;
+background-color: #08104F;
+color: #fff;
+position: absolute;
+top: 53%;
+right: -8px;
   transform: translateY(-50%) scale(0);
   opacity: 0;
   transition: opacity 0.3s, transform 0.3s;
@@ -300,23 +287,31 @@
   transform: translateY(-50%) scale(1);
 }
 
-.plyr {
-  border-radius: 2rem;
+/* Category hover animation */
+.category-link {
+	position: relative;
+	overflow: hidden;
+	transition: all 0.5s ease;
+}
+.single-content p{
+	text-align: justify;
+
+}
+.single-content h2{
+	font-size: 24px;
+	font-weight: bold;
+	margin-top: 1rem;
+
+}
+.single-content h3{
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 1rem;
+	
+}
+.single-content h4{
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 1rem;
 }
 
-.testimonial-cart:after {
-  content: "";
-  background: #e6e7ed;
-  position: absolute;
-}
-
-.testimonial-cart:after:nth-last-child {
-  height: 0px;
-  width: 0px;
-}
-
-.testimonial-cart::before {
-  content: "";
-  background: #e6e7ed;
-  position: absolute;
-}

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Templates helper
  * for every folder on partial you must create a function
@@ -8,21 +7,13 @@
 
 namespace Cyan\Theme\Helpers;
 
-class Templates
-{
+class Templates {
 
-	public static function getPart($partial)
-	{
-		get_template_part('partials/parts/' . $partial);
+	public static function getPart( $partial ) {
+		get_template_part( 'partials/parts/' . $partial );
 	}
 
-	public static function getCard($partial)
-	{
-		get_template_part('partials/cards/' . $partial);
-	}
-
-	public static function getPopup($partial, $args = [])
-	{
-		get_template_part('partials/popups/' . $partial, null, $args);
+	public static function getCard( $partial ) {
+		get_template_part( 'partials/cards/' . $partial );
 	}
 }

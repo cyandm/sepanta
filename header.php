@@ -30,7 +30,7 @@ $render_template = $args['render_template'] ?? true;
 			<?php Icon::print('Arrow-28') ?>
 		</div>
 
-		<header class="container mt-9 max-md:mt-6 mb-6 max-md:mb-5">
+		<header class="container mt-9 max-md:mt-6 mb-6">
 			<?php Templates::getPart('header-desktop'); ?>
 			<?php Templates::getPart('header-mobile'); ?>
 		</header>

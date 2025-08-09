@@ -1,4 +1,4 @@
-function AddIcons() {
+function addIcons() {
   document
     .querySelectorAll("#main-menu .menu-item-has-children")
     ?.forEach((menu) => {
@@ -11,4 +11,4 @@ function AddIcons() {
     });
 }
 
-export { AddIcons };
+export { addIcons };

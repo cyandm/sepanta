@@ -9,16 +9,14 @@
 
 namespace Cyan\Theme\Classes;
 
-class Register
-{
-	public static function init()
-	{
-		add_action('init', [__CLASS__, 'registerPostType']);
-		add_action('init', [__CLASS__, 'registerTaxonomy']);
-		add_action('init', [__CLASS__, 'registerTerm']);
-		add_action('init', [__CLASS__, 'registerPage']);
+class Register {
+	public static function init() {
+		add_action( 'init', [ __CLASS__, 'registerPostType' ] );
+		add_action( 'init', [ __CLASS__, 'registerTaxonomy' ] );
+		add_action( 'init', [ __CLASS__, 'registerTerm' ] );
+		add_action( 'init', [ __CLASS__, 'registerPage' ] );
 
-		add_action('after_setup_theme', [__CLASS__, 'registerMenus']);
+		add_action( 'after_setup_theme', [ __CLASS__, 'registerMenus' ] );
 	}
 
 	/**
@@ -26,30 +24,22 @@ class Register
 	 * after register menus, you can use get_nav_menu_locations() to get the menu locations
 	 * @return void
 	 */
-	public static function registerMenus()
-	{
-		register_nav_menus([
+	public static function registerMenus() {
+		register_nav_menus( [ 
 			'header-menu' => 'منوی بالا',
 			'footer-menu' => 'منوی پایین',
 			'footer-menu-two' => 'منوی پایین دوم'
-		]);
+		] );
 	}
 
-	public static function registerPostType()
-	{
+	public static function registerPostType() {
 		self::makePostType('project', 'پروژه', 'پروژه ها', 'dashicons-bank', ['title', 'thumbnail', 'editor']);
-		self::makePostType('service', 'خدمت', 'خدمات', 'dashicons-hammer', ['title', 'thumbnail', 'editor']);
 		self::makePostType('engineer', 'مهندس', 'مهندسین', 'dashicons-admin-users', ['title', 'thumbnail', 'editor']);
-		self::makePostType('testimonial', 'نظر', 'نظرات', 'dashicons-admin-comments', ['title', 'thumbnail', 'editor']);
-		self::makePostType('faq', 'سوال', 'سوالات', 'dashicons-list-view', ['title', 'editor']);
 	}
 
-	public static function registerTaxonomy()
-	{
+	public static function registerTaxonomy() {
 		self::makeTaxonomy('project-cat', 'دسته بندی', 'دسته بندی ها', ['project'], true);
-		self::makeTaxonomy('service-cat', 'دسته بندی', 'دسته بندی ها', ['service'], true);
 		self::makeTaxonomy('engineer-cat', 'دسته بندی', 'دسته بندی ها', ['engineer'], true);
-		self::makeTaxonomy('faq-cat', 'دسته بندی', 'دسته بندی ها', ['faq'], true);
 	}
 
 	/**
@@ -57,8 +47,7 @@ class Register
 	 * this terms can not be removed
 	 * @return void
 	 */
-	public static function registerTerm()
-	{
+	public static function registerTerm() {
 
 		// wp_insert_term( 'دسته بندی جدید', 'category' );
 	}
@@ -68,14 +57,12 @@ class Register
 	 * this pages can not be removed
 	 * @return void
 	 */
-	public static function registerPage()
-	{
+	public static function registerPage() {
 		// self::makePage( 'about-us', 'درباره ما' );
 	}
 
-	private static function makePostType($slug, $singular_name, $plural_name, $icon, $supports = ['title', 'thumbnail'], $search_include = true)
-	{
-		$labels = [
+	private static function makePostType( $slug, $singular_name, $plural_name, $icon, $supports = [ 'title', 'thumbnail' ], $search_include = true ) {
+		$labels = [ 
 			'name' => $singular_name,
 			'singular_name' => $singular_name,
 			'menu_name' => $plural_name,
@@ -91,14 +78,14 @@ class Register
 			'not_found_in_trash' => $singular_name . ' پیدا نشد'
 		];
 
-		$args = [
+		$args = [ 
 			'labels' => $labels,
 			'public' => true,
 			'publicly_queryable' => true,
 			'show_ui' => true,
 			'show_in_menu' => true,
 			'query_var' => true,
-			'rewrite' => ['slug' => $slug],
+			'rewrite' => [ 'slug' => $slug ],
 			'exclude_from_search' => ! $search_include,
 			'has_archive' => true,
 			'hierarchical' => false,
@@ -108,43 +95,41 @@ class Register
 
 		];
 
-		register_post_type($slug, $args);
+		register_post_type( $slug, $args );
 	}
 
-	private static function makeTaxonomy($slug, $singular_name, $plural_name, $post_types, $hierarchical = false)
-	{
-		$labels = [
+	private static function makeTaxonomy( $slug, $singular_name, $plural_name, $post_types, $hierarchical = false ) {
+		$labels = [ 
 			'name' => $plural_name,
 			'menu_name' => $plural_name,
 			'all_items' => 'همه ' . $plural_name,
 			'add_new_item' => 'افزودن ' . $singular_name . ' جدید',
 		];
 
-		$args = [
+		$args = [ 
 			'labels' => $labels,
 			'hierarchical' => $hierarchical,
 			'show_ui' => true,
 			'show_admin_column' => true,
-			'rewrite' => ['slug' => $slug],
+			'rewrite' => [ 'slug' => $slug ],
 			'query_var' => true,
 			'show_in_rest' => true,
 			'show_tagcloud' => true,
 			'show_in_quick_edit' => true,
 		];
 
-		register_taxonomy($slug, $post_types, $args);
+		register_taxonomy( $slug, $post_types, $args );
 	}
 
-	private static function makePage($slug, $title)
-	{
-		if (is_null(get_page_by_path($slug))) {
-			wp_insert_post([
+	private static function makePage( $slug, $title ) {
+		if ( is_null( get_page_by_path( $slug ) ) ) {
+			wp_insert_post( [ 
 				'post_type' => 'page',
 				'post_status' => 'publish',
 				'post_title' => $title,
 				'post_name' => $slug,
 				'page_template' => 'templates/' . $slug . '.php'
-			]);
+			] );
 		}
 	}
 }

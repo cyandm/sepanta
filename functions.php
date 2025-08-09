@@ -28,3 +28,12 @@ include_once THEME_DIR . '/vendor/autoload.php';
 Cyan\Theme\Classes\Setup::init();
 
 
+function debug_page_template()
+{
+      if (is_page('blogs')) {
+            error_log('Current template: ' . get_page_template());
+            error_log('Is posts page: ' . (is_home() ? 'yes' : 'no'));
+            error_log('Page ID: ' . get_the_ID());
+      }
+}
+add_action('wp', 'debug_page_template');

@@ -1,10 +1,13 @@
-<?php /* Template Name: Home */ ?>
-
 <?php
 
 use Cyan\Theme\Helpers\Templates;
+use Cyan\Theme\Helpers\Icon;
 
-get_header(); ?>
+    
+?>
+
+<?php get_header(); ?>
+
 
 
 

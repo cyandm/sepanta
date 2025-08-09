@@ -1,4 +1,4 @@
-function SubMenuMobile() {
+function subMenuMobile() {
   jQuery(document).ready(function ($) {
     // SVG آیکون Arrow-12 (نمونه فرضی)
     var arrowIcon = `<i class="sub-menu-icon mt-1.5 flex justify-end" style="transition:transform 0.3s;vertical-align:middle;">
@@ -27,4 +27,4 @@ function SubMenuMobile() {
   });
 }
 
-export { SubMenuMobile };
+export { subMenuMobile };
