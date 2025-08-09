@@ -46,7 +46,7 @@ use Cyan\Theme\Helpers\Icon;
 
     </div>
 
-    <div class="p-3 pb-5 [&_*]:leading-7 [&_p]:gap-1 max-md:w-3/5">
+    <div class="p-3 pb-5 [&_*]:leading-7 [&_p]:gap-1">
         <p class="text-base font-semibold text-cynBlack">
             <?php the_title(); ?>
         </p>
