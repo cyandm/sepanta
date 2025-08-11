@@ -21,7 +21,7 @@ if (empty($faq_group))
 
 ?>
 
-<div class="py-6 px-4 bg-cynLightGrey divide-y divide-[#e6e7ed] rounded-3xl shadow-cxl">
+<div class="py-2 px-4 bg-cynLightGrey divide-y divide-[#e6e7ed] rounded-3xl shadow-cxl">
 
     <?php foreach ($faq_group as $index => $postId) : ?>
         <?php get_template_part('partials/cards/faq', null, ['post-id' => $postId]) ?>

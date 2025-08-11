@@ -1,4 +1,4 @@
-<a href="<?php the_permalink(); ?>" class="w-full h-fit relative group">
+<div class="w-full h-fit relative group cursor-pointer">
 
     <?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full', false, ['class' => 'object-cover h-[280px]']); ?>
 
@@ -12,4 +12,4 @@
 
     </div>
 
-</a>
+</div>

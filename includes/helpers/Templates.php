@@ -11,9 +11,9 @@ namespace Cyan\Theme\Helpers;
 class Templates
 {
 
-	public static function getPart($partial)
+	public static function getPart($partial, $args = [])
 	{
-		get_template_part('partials/parts/' . $partial);
+		get_template_part('partials/parts/' . $partial, null, $args);
 	}
 
 	public static function getCard($partial)

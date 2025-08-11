@@ -24,6 +24,7 @@ class Customize
 		self::$wpCustomize = $wp_customize;
 		self::registerPanelCustomCode();
 		self::registerPanelInformation();
+		self::registerPanelServices();
 	}
 
 	private static function addControl($section, $type, $id, $label, $description = '')
@@ -142,5 +143,33 @@ class Customize
 		self::addControl('footer_section', 'text', "instagram_link", "لینک اینستاگرام");
 		self::addControl('footer_section', 'text', "whatsapp_link", "لینک واتس اپ");
 		self::addControl('footer_section', 'file', "logo", "لوگو");
+	}
+
+	private static function registerPanelServices()
+	{
+		self::$wpCustomize->add_panel(
+			'services',
+			[
+				'title' => 'صفحه خدمات',
+				'priority' => 1
+			]
+		);
+
+		self::$wpCustomize->add_section(
+			'services_section',
+			[
+				'title' => 'راه‌های ارتباطی صفحه خدمات',
+				'priority' => 1,
+				'panel' => 'services'
+			]
+		);
+
+		self::addControl('services_section', 'file', "contact_image", "عکس");
+		self::addControl('services_section', 'text', "contact_title", "عنوان");
+		self::addControl('services_section', 'text', "contact_address", "آدرس");
+		self::addControl('services_section', 'text', "contact_address_link", "لینک آدرس");
+		self::addControl('services_section', 'text', "contact_tel", "تلفن");
+		self::addControl('services_section', 'text', "contact_social", "شبکه های اجتماعی");
+		self::addControl('services_section', 'text', "contact_social_link", "لینک شبکه های اجتماعی");
 	}
 }

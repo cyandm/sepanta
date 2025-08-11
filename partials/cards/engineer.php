@@ -7,7 +7,7 @@ $engineer_video = wp_get_attachment_url(get_field('engineer_video', get_the_ID()
 $has_video = 'modal-opener data-modal-name="introduction-modal"'
 ?>
 
-<div class="w-1/3 max-lg:w-[calc(50%-6px)] max-md:w-full relative group rounded-4xl group" <?= !empty($engineer_video) ? $has_video : '' ?> data-video-url="<?= !empty($engineer_video) ? $engineer_video : '' ?>">
+<div class="w-1/3 max-lg:w-[calc(50%-6px)] max-md:w-full relative group rounded-4xl group cursor-pointer" <?= !empty($engineer_video) ? $has_video : '' ?> data-video-url="<?= !empty($engineer_video) ? $engineer_video : '' ?>">
 
     <?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full', false, ['class' => 'object-cover object-top h-[450px] rounded-4xl']); ?>
 

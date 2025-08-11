@@ -3,13 +3,33 @@
 use Cyan\Theme\Helpers\Templates;
 use Cyan\Theme\Helpers\Icon;
 
-$page_id = get_option('page_on_front');
-$services_title = get_field('services_title', $page_id);
+// Get parameters passed to this template
+$args = wp_parse_args($args ?? [], [
+    'page_id' => get_option('page_on_front'),
+    'title' => null,
+    'posts_per_page' => 8,
+    'tax_query' => null,
+    'exclude_current' => false,
+    'current_post_id' => get_the_ID()
+]);
+
+$page_id = $args['page_id'];
+$services_title = $args['title'] ?? get_field('services_title', $page_id);
 
 $services_args = [
     'post_type' => 'service',
-    'posts_per_page' => 8,
+    'posts_per_page' => $args['posts_per_page'],
 ];
+
+// Add taxonomy query if provided
+if ($args['tax_query']) {
+    $services_args['tax_query'] = $args['tax_query'];
+}
+
+// Exclude current post if requested
+if ($args['exclude_current'] && $args['current_post_id']) {
+    $services_args['post__not_in'] = [$args['current_post_id']];
+}
 
 $services = new WP_Query($services_args);
 ?>

@@ -37,6 +37,8 @@ class ACF
 		self::forProjects();
 		self::forEngineers();
 		self::forTestimonials();
+		self::forService();
+
 
 		//Taxonomies
 		self::forCategory();
@@ -51,6 +53,7 @@ class ACF
 	}
 
 
+	//PostTypes
 	private static function forProjects()
 	{
 		//define helper
@@ -127,6 +130,36 @@ class ACF
 
 		// register group
 		$acfGroup->register('testimonial');
+	}
+
+	private static function forService()
+	{
+		//define helper
+		$acfGroup = new AcfGroup();
+
+		//add fields
+		$acfGroup->layoutFields->addTab('project', 'پروژه ها');
+		$acfGroup->basicFields->addText('project_title', 'عنوان پروژه ها', ['width' => '50%']);
+		$acfGroup->relationshipFields->addLink('project_link', 'متن و لینک دکمه', ['width' => '50%']);
+		$acfGroup->relationshipFields->addPostObject('project_post', 'انتخاب پروژه', [
+			'post_type' => 'project',
+			'multiple' => 1,
+		]);
+
+		$acfGroup->layoutFields->addTab('faq', 'سوالات متداول');
+		$acfGroup->relationshipFields->addPostObject('service_faqs', 'انتخاب سوالات متداول', [
+			'post_type' => 'faq',
+			'multiple' => 1,
+		]);
+
+		$acfGroup->layoutFields->addTab('services', 'خدمات ها');
+		$acfGroup->basicFields->addText('services_title', 'عنوان خدمات', ['width' => '100%']);
+
+		//location
+		$acfGroup->setLocation('post_type', '==', 'service');
+
+		// register group
+		$acfGroup->register('Service');
 	}
 
 

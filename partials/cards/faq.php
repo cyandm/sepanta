@@ -12,7 +12,7 @@ if ($postId === 0) {
 <div class="py-6 | faq-card"
     id="<?php echo "faq-$postId" ?>">
     <div class="faq-toggle | flex justify-between gap-2 items-center cursor-pointer">
-        <span class="text-cynBlue text-xl font-semibold">
+        <span class="text-cynBlue text-xl font-semibold max-md:text-base">
             <?php echo '• ' . get_the_title($postId) ?>
         </span>
 
