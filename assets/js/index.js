@@ -12,6 +12,7 @@ import { ThemePlyr } from "./modules/plyr";
 import { Popups } from "./functions/popups";
 import { FaqTabs, FaqCard } from "./functions/faq";
 import { SelectBox } from "./functions/selectBox";
+import photoswipe from "./modules/photoswipe";
 
 Modals();
 SubMenuMobile();
@@ -23,3 +24,4 @@ Popups();
 FaqTabs();
 FaqCard();
 SelectBox();
+photoswipe();

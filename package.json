@@ -35,6 +35,7 @@
 		"@tailwindcss/oxide": "^4.0.6",
 		"esbuild": "^0.25.8",
 		"gsap": "^3.12.5",
+		"photoswipe": "^5.4.4",
 		"plyr": "^3.7.8",
 		"swiper": "^11.1.11"
 	},

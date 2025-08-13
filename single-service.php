@@ -1,5 +1,3 @@
-<?php /* Template Name: Service */ ?>
-
 <?php
 
 use Cyan\Theme\Helpers\Templates;

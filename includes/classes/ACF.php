@@ -70,23 +70,21 @@ class ACF
 
 		$acfGroup->layoutFields->addTab('project_info', 'اطلاعات پروژه');
 
-		$acfGroup->basicFields->addText('project_name', 'نام سازه', ['width' => '25%']);
+		$projectAttributes = [
+			'project_name' => 'نام سازه',
+			'project_location' => 'موقعیت مکانی',
+			'project_floor' => 'تعداد طبقات',
+			'project_under_area' => 'زیر بنای کل پروژه',
+			'project_type' => 'نوع سازه',
+			'project_faced' => 'نوع نما',
+			'project_area' => 'متراژ واحد ها',
+			'project_facilities' => 'سیستم تأسیسات',
+			'project_security' => 'سیستم ایمنی'
+		];
 
-		$acfGroup->basicFields->addText('project_location', 'موقعیت مکانی', ['width' => '25%']);
-
-		$acfGroup->basicFields->addText('project_floor', 'تعداد طبقات', ['width' => '25%']);
-
-		$acfGroup->basicFields->addText('project_under_area', 'زیر بنای کل پروژه', ['width' => '25%']);
-
-		$acfGroup->basicFields->addText('project_type', 'نوع سازه', ['width' => '25%']);
-
-		$acfGroup->basicFields->addText('project_faced', 'نوع نما', ['width' => '25%']);
-
-		$acfGroup->basicFields->addText('project_area', 'متراژ واحد ها', ['width' => '25%']);
-
-		$acfGroup->basicFields->addText('project_facilities', 'سیستم تأسیسات', ['width' => '25%']);
-
-		$acfGroup->basicFields->addText('project_security', 'سیستم ایمنی', ['width' => '25%']);
+		foreach ($projectAttributes as $attribute => $fieldLabel) {
+			$acfGroup->basicFields->addText($attribute, $fieldLabel, ['width' => '25%']);
+		}
 
 		//location
 		$acfGroup->setLocation('post_type', '==', 'project');

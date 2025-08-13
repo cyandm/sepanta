@@ -16,9 +16,9 @@ class Templates
 		get_template_part('partials/parts/' . $partial, null, $args);
 	}
 
-	public static function getCard($partial)
+	public static function getCard($partial,  $args = [])
 	{
-		get_template_part('partials/cards/' . $partial);
+		get_template_part('partials/cards/' . $partial, null, $args);
 	}
 
 	public static function getPopup($partial, $args = [])
