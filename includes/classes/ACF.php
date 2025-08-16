@@ -35,7 +35,7 @@ class ACF
 	{
 		//PostTypes
 		self::forProjects();
-		self::forEngineers();
+		self::forPersonnel();
 		self::forTestimonials();
 		self::forService();
 
@@ -94,21 +94,21 @@ class ACF
 	}
 
 
-	private static function forEngineers()
+	private static function forPersonnel()
 	{
 
 		//define helper
 		$acfGroup = new AcfGroup();
 
 		//add fields
-		$acfGroup->basicFields->addText('engineer_position', 'سمت', ['width' => '100%']);
-		$acfGroup->contentFields->addFile('engineer_video', 'ویدیو', ['width' => '100%']);
+		$acfGroup->basicFields->addText('personnel_position', 'سمت', ['width' => '100%']);
+		$acfGroup->contentFields->addFile('personnel_video', 'ویدیو', ['width' => '100%']);
 
 		//location
-		$acfGroup->setLocation('post_type', '==', 'engineer');
+		$acfGroup->setLocation('post_type', '==', 'personnel');
 
 		// register group
-		$acfGroup->register('Engineer');
+		$acfGroup->register('Personnel');
 	}
 
 
@@ -260,9 +260,9 @@ class ACF
 		$acfGroup->contentFields->addFile('video_file', 'فایل ویدیو', ['width' => '100%']);
 		$acfGroup->contentFields->addImage('video_cover', 'عکس پوشش ویدیو', ['width' => '100%']);
 
-		$acfGroup->layoutFields->addTab('engineers', 'مهندسین');
-		$acfGroup->basicFields->addText('engineers_title', 'عنوان مهندسین', ['width' => '100%']);
-		$acfGroup->relationshipFields->addLink('engineers_link', 'متن و لینک دکمه', ['width' => '100%']);
+		$acfGroup->layoutFields->addTab('personnel', 'افراد');
+		$acfGroup->basicFields->addText('personnel_title', 'عنوان پرسنل', ['width' => '100%']);
+		$acfGroup->relationshipFields->addLink('personnel_link', 'متن و لینک دکمه', ['width' => '100%']);
 
 		$acfGroup->layoutFields->addTab('vision', 'چشم انداز ما');
 		$acfGroup->basicFields->addText('vision_title', 'عنوان', ['width' => '50%']);

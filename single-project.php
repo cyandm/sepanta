@@ -83,7 +83,7 @@ get_header();
 
         <div class="flex flex-col gap-3">
 
-            <h1 class="text-cynBlack text-6xl font-semibold max-md:text-5xl"><?php the_title(); ?></h1>
+            <h1 class="text-cynBlue text-6xl font-semibold max-md:text-5xl"><?php the_title(); ?></h1>
 
             <div class="text-xl font-medium leading-9 text-cynBlue max-md:text-base">
                 <?php the_content(); ?>
@@ -98,7 +98,7 @@ get_header();
         <div class="w-1/2 max-lg:w-full relative h-fit">
 
             <div class="mb-4">
-                <p class="text-5xl max-md:text-4xl font-semibold text-cynBlack">جزییات پروژه</p>
+                <p class="text-5xl max-md:text-4xl font-semibold text-cynBlue">جزییات پروژه</p>
             </div>
 
             <!-- اسلایدر اصلی -->
@@ -214,7 +214,7 @@ get_header();
                     $same_category = !empty(array_intersect($first_term_ids, $current_term_ids));
                 }
                 ?>
-                <p class="text-5xl font-semibold max-md:text-4xl text-cynBlack">
+                <p class="text-5xl font-semibold max-md:text-4xl text-cynBlue">
                     دیگر پروژه ها
                 </p>
             </div>

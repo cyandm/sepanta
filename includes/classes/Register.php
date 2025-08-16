@@ -39,7 +39,7 @@ class Register
 	{
 		self::makePostType('project', 'پروژه', 'پروژه ها', 'dashicons-bank', ['title', 'thumbnail', 'editor']);
 		self::makePostType('service', 'خدمت', 'خدمات', 'dashicons-hammer', ['title', 'thumbnail', 'editor']);
-		self::makePostType('engineer', 'مهندس', 'مهندسین', 'dashicons-admin-users', ['title', 'thumbnail', 'editor']);
+		self::makePostType('personnel', 'پرسنل', 'پرسنل', 'dashicons-admin-users', ['title', 'thumbnail', 'editor']);
 		self::makePostType('testimonial', 'نظر', 'نظرات', 'dashicons-admin-comments', ['title', 'thumbnail', 'editor']);
 		self::makePostType('faq', 'سوال', 'سوالات', 'dashicons-list-view', ['title', 'editor']);
 	}
@@ -48,7 +48,7 @@ class Register
 	{
 		self::makeTaxonomy('project-cat', 'دسته بندی', 'دسته بندی ها', ['project'], true);
 		self::makeTaxonomy('service-cat', 'دسته بندی', 'دسته بندی ها', ['service'], true);
-		self::makeTaxonomy('engineer-cat', 'دسته بندی', 'دسته بندی ها', ['engineer'], true);
+		self::makeTaxonomy('personnel-cat', 'دسته بندی', 'دسته بندی ها', ['personnel'], true);
 		self::makeTaxonomy('faq-cat', 'دسته بندی', 'دسته بندی ها', ['faq'], true);
 	}
 

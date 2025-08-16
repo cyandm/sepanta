@@ -8,7 +8,7 @@ use Cyan\Theme\Helpers\Icon;
 
 $video_title = get_field('video_title', $page_id);
 $video_file = wp_get_attachment_url(get_field('video_file', $page_id));
-$video_cover = wp_get_attachment_url(get_field('video_cover', $page_id)); 
+$video_cover = wp_get_attachment_url(get_field('video_cover', $page_id));
 $about_video_cover = wp_get_attachment_url(get_field('about_video_cover'));
 $text_under_video_one = get_field('text_under_video_one');
 $text_under_video_two = get_field('text_under_video_two');

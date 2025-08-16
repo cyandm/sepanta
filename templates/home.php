@@ -14,7 +14,7 @@ Templates::getPart('home/hero');
 Templates::getPart('projects');
 Templates::getPart('services', ['page_id' => get_option('page_on_front'), 'posts_per_page' => 8]);
 Templates::getPart('home/video');
-Templates::getPart('home/engineers');
+Templates::getPart('home/personnel');
 Templates::getPart('home/vision');
 Templates::getPart('testimonials');
 Templates::getPart('faq');
