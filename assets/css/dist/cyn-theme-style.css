@@ -1385,6 +1385,13 @@
       }
     }
   }
+  .hover\:bg-\[\#8186A9\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #8186A9;
+      }
+    }
+  }
   .hover\:bg-cynBlue {
     &:hover {
       @media (hover: hover) {

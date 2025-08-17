@@ -3,10 +3,17 @@
 use Cyan\Theme\Helpers\Icon;
 use Cyan\Theme\Helpers\Templates;
 
-$categories = get_categories([
-      'orderby' => 'name',
-      'order'   => 'ASC'
-]);
+$project_categories = get_terms(array(
+      'taxonomy'   => 'project-cat',
+      'orderby'    => 'name',
+      'order'      => 'ASC',
+      'hide_empty' => true,
+));
+
+$project_categories = array_filter($project_categories, function ($category) {
+      return $category->slug !== 'uncategorized';
+});
+
 
 get_header(); ?>
 
@@ -15,11 +22,11 @@ get_header(); ?>
 
       <section>
 
-            <div id="searchPostType" class="bg-cynLightBlue py-3 flex justify-between items-center rounded-4xl px-6 my-6 max-md:flex-col gap-3">
+            <div id="searchPostType" class="bg-cynLightBlue py-3 flex justify-between items-center rounded-4xl px-6 my-6">
 
-                  <form id="search-form" action="<?php echo home_url(); ?>" method="get" class="flex justify-between items-center max-md:w-full">
+                  <form id="search-form" action="<?php echo home_url(); ?>" method="get" class="flex justify-between items-center w-full max-md:flex-col gap-3">
 
-                        <div class="relative max-lg:w-full">
+                        <div class="relative max-md:w-full">
 
                               <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
 
@@ -33,33 +40,41 @@ get_header(); ?>
                                     id="email-address-icon"
                                     name="s"
                                     value="<?php the_search_query() ?>"
-                                    class="bg-cynLightGrey max-md:w-full rounded-4xl text-[#7B7B7B] pt-3 pr-11 border border-transparent hover:border hover:border-cynBlack hover:text-cynBlack transition-all duration-400 block ps-10 p-2.5 max-lg:w-full"
+                                    class="bg-cynLightGrey max-md:w-full rounded-4xl text-[#7B7B7B] pt-3 pr-11 border border-transparent hover:border hover:border-cynBlack hover:text-cynBlack transition-all duration-400 block ps-10 p-2.5"
                                     placeholder="جستجو کن">
                         </div>
 
-                  </form>
+                        <div class="flex justify-start items-center gap-2 max-sm:flex-col max-sm:items-start ">
 
-                  <div class="flex justify-start items-center gap-2 max-sm:flex-col max-sm:items-start ">
+                              <div class="flex">
 
-                        <div class="flex">
+                                    <div class="flex-wrap flex gap-2 [&_div]:transition-all [&_div]:duration-200 [&_div_input]:cursor-pointer md:flex md:items-center">
 
-                              <div class="flex-wrap flex gap-2 [&_div]:transition-all [&_div]:duration-200 [&_div_input]:cursor-pointer md:flex md:items-center">
-                                    <div class="flex justify-center items-center gap-1 flex-wrap">
+                                          <div class="flex justify-center items-center gap-2 flex-wrap">
 
-                                          <?php foreach ($categories as $category) : ?>
-
-                                                <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>" class="bg-[#8186A9] text-white font-normal py-3 px-6 active:bg-white hover:bg-cynBlue rounded-4xl transition-all duration-300">
-                                                      <?php echo esc_html($category->name); ?>
+                                                <a href="<?php echo esc_url(get_post_type_archive_link('project')); ?>" class="bg-cynBlue text-white font-normal py-3 px-6 hover:bg-[#8186A9] rounded-4xl transition-all duration-300">
+                                                      همه
                                                 </a>
-                                          <?php endforeach;
-                                          wp_reset_postdata(); ?>
+
+                                                <?php foreach ($project_categories as $project_category) : ?>
+
+                                                      <a href="<?php echo esc_url(get_category_link($project_category->term_id)); ?>" class="bg-[#8186A9] text-white font-normal py-3 px-6 hover:bg-cynBlue rounded-4xl transition-all duration-300">
+                                                            <?php echo esc_html($project_category->name); ?>
+                                                      </a>
+
+                                                <?php endforeach;
+
+                                                wp_reset_postdata(); ?>
+
+                                          </div>
 
                                     </div>
 
-
                               </div>
+
                         </div>
-                  </div>
+
+                  </form>
 
             </div>
 
